@@ -1,7 +1,7 @@
 import cv2
 
 # Cascade sınıflandırıcısı yüklenir
-car_cascade = cv2.CascadeClassifier('cars.xml')
+car_cascade = cv2.CascadeClassifier('denemeler/cars.xml')
 
 # Görüntü okunur
 img = cv2.imread('4.png')
@@ -10,7 +10,7 @@ img = cv2.imread('4.png')
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 # Araçlar tespit edilir
-cars = car_cascade.detectMultiScale(gray, 1.1, 3)
+cars = car_cascade.detectMultiScale(gray, 0.5, 1.1)
 
 # Her bir araç için dikdörtgen çizilir
 for (x, y, w, h) in cars:
